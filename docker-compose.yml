@@ -1,0 +1,10 @@
+version: '2'
+services:
+  ml:
+    build: .
+    ports:
+     - "8887:8887"
+    tty: true
+    volumes:
+     - .:/codeml
+
