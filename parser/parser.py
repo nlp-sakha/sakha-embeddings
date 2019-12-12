@@ -3,6 +3,8 @@ import argparse
 from parser_edersaas import parser as edersaas_parser
 from parser_kyym import parser as kyym_parser
 from parser_sakhasire import parser as sakhasire_parser
+from parser_sakhalife_sahalii import parser as sakhalife_parser
+from parser_iltymen import parser as iltymen_parser
 
 
 def main(newspaper_name, output, from_page=0, to_page=10):
@@ -15,6 +17,10 @@ def main(newspaper_name, output, from_page=0, to_page=10):
         current_parser = edersaas_parser
     elif newspaper_name == 'sakhasire':
         current_parser = sakhasire_parser
+    elif newspaper_name == 'sakhalife_sahalii':
+        current_parser = sakhalife_parser
+    elif newspaper_name == 'iltymen':
+        current_parser = iltymen_parser
     else:
         assert (ValueError('newspaper_name is not known'))
     print_each = (to_page - from_page) // 10
@@ -28,8 +34,8 @@ if __name__ == '__main__':
     argparser.add_argument('newspaper_name',
                            action='store',
                            type=str,
-                           choices=['kyym', 'edersaas', 'sakhasire'],
-                           help='"kyym", "edersaas" or "sakhasire". Example: python kyym ...')
+                           choices=['kyym', 'edersaas', 'sakhasire', 'sakhalife_sahalii', 'iltymen'],
+                           help='"kyym", "edersaas", "iltymen", "sakhalife_sahalii" or "sakhasire". Example: python kyym ...')
     argparser.add_argument('-f',
                            '--from_page',
                            type=int,
@@ -52,3 +58,5 @@ if __name__ == '__main__':
          from_page=args.from_page,
          to_page=args.to_page,
          output=args.output)
+#python3 parser/parser.py sakhalife_sahalii -f 0 -t 2000 -o data/corpus.sakhalife.txt
+#python3 parser/parser.py kyym -f 0 -t 50 -o data/corpus.kyym.txt
