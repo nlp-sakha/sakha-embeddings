@@ -44,7 +44,7 @@ def get_article_content(url):
 def parser(start_count, finish_count, output='parser_output.txt', print_each=2):
     last_page = get_last_page(get_html(BASE_URL))
     count = 0
-    for i in range(1, last_page+1):
+    for i in range(1, last_page + 1):
         GEN_URL = BASE_URL+'page/'+str(i)
         html = get_html(GEN_URL)
         urls = get_page_data(html)
@@ -56,6 +56,7 @@ def parser(start_count, finish_count, output='parser_output.txt', print_each=2):
                 text_file.write(content+'\n')
             text_file.close()
             count += 1
+        print(count)
     return count
 
 

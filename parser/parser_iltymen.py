@@ -42,7 +42,7 @@ def parser(start_count, finish_count, output='parser_output.txt', print_each=2):
     count = 0
     for i in urls_rubriki:
         html = get_html(i)
-        urls = get_urls_articles(html)
+        urls = list(filter(lambda x: 'http' in x, get_urls_articles(html)))
         print(urls)
 
         for url in urls:
@@ -52,6 +52,7 @@ def parser(start_count, finish_count, output='parser_output.txt', print_each=2):
                 text_file.write(content+'\n')
             text_file.close()
             count += 1
+        print(count)
     return count
 
 """

@@ -58,5 +58,6 @@ if __name__ == '__main__':
          from_page=args.from_page,
          to_page=args.to_page,
          output=args.output)
-#python3 parser/parser.py sakhalife_sahalii -f 0 -t 2000 -o data/corpus.sakhalife.txt
 #python3 parser/parser.py kyym -f 0 -t 50 -o data/corpus.kyym.txt
+#python3 parser/parser.py sakhalife_sahalii -f 0 -t 2000 -o data/corpus.sakhalife.txt
+#python3 parser/parser.py iltymen -f 0 -t 2000 -o data/corpus.iltymen.txt

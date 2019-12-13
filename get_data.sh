@@ -6,6 +6,8 @@ if [ ! -f ./data/all.txt ]; then
     python parser/parser.py kyym -f 0 -t 2000 -o data/corpus.kyym.txt
     python parser/parser.py edersaas -f 0 -t 100 -o data/corpus.edersaas.txt
     python parser/parser.py sakhasire -f 0 -t 100 -o data/corpus.sakhasire.txt
+    python parser/parser.py sakhalife_sahalii -f 0 -t 2000 -o data/corpus.sakhalife.txt
+    python parser/parser.py iltymen -f 0 -t 2000 -o data/corpus.iltymen.txt
     cat data/wiki.txt >> data/all.txt
     cat data/corpus.kyym.txt >> data/all.txt
     cat data/corpus.edersaas.txt >> data/all.txt
