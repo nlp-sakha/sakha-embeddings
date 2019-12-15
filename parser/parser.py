@@ -5,6 +5,7 @@ from parser_kyym import parser as kyym_parser
 from parser_sakhasire import parser as sakhasire_parser
 from parser_sakhalife_sahalii import parser as sakhalife_parser
 from parser_iltymen import parser as iltymen_parser
+from parser_ysia import parser as ysia_parser
 
 
 def main(newspaper_name, output, from_page=0, to_page=10):
@@ -21,6 +22,8 @@ def main(newspaper_name, output, from_page=0, to_page=10):
         current_parser = sakhalife_parser
     elif newspaper_name == 'iltymen':
         current_parser = iltymen_parser
+    elif newspaper_name == 'ysia':
+        current_parser = ysia_parser
     else:
         assert (ValueError('newspaper_name is not known'))
     print_each = (to_page - from_page) // 10
@@ -34,8 +37,8 @@ if __name__ == '__main__':
     argparser.add_argument('newspaper_name',
                            action='store',
                            type=str,
-                           choices=['kyym', 'edersaas', 'sakhasire', 'sakhalife_sahalii', 'iltymen'],
-                           help='"kyym", "edersaas", "iltymen", "sakhalife_sahalii" or "sakhasire". Example: python kyym ...')
+                           choices=['kyym', 'edersaas', 'sakhasire', 'sakhalife_sahalii', 'iltymen', 'ysia'],
+                           help='"kyym", "edersaas", "iltymen", "sakhalife_sahalii", "ysia" or "sakhasire". Example: python kyym ...')
     argparser.add_argument('-f',
                            '--from_page',
                            type=int,
@@ -61,3 +64,4 @@ if __name__ == '__main__':
 #python3 parser/parser.py kyym -f 0 -t 50 -o data/corpus.kyym.txt
 #python3 parser/parser.py sakhalife_sahalii -f 0 -t 2000 -o data/corpus.sakhalife.txt
 #python3 parser/parser.py iltymen -f 0 -t 2000 -o data/corpus.iltymen.txt
+#python3 parser/parser.py ysia -f 0 -t 2000 -o data/corpus.ysia.txt

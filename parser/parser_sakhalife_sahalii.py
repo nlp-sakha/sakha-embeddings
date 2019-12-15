@@ -58,10 +58,3 @@ def parser(start_count, finish_count, output='parser_output.txt', print_each=2):
             count += 1
         print(count)
     return count
-
-
-"""
-if __name__=='__main__':
-    parsed = parser(output='parser_output.txt')
-    print('RESULT: {} articles parsed from sakhalife'.format(parsed))
-"""
