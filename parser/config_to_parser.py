@@ -5,6 +5,7 @@ BASE_URL_SAKHA_SIRE = "http://sakha-sire.ru/author/sakhasire/page/"
 BASE_URL_EDERSAAS = "http://www.edersaas.ru/category/oloh-da-ah/page/"
 BASE_URL_SAKHALIFE = "https://sakhalife.ru/category/sahalii/"
 BASE_URL_ILTYMEN = "https://news.iltumen.ru/all/?lang=sakha"
+BASE_URL_YSIA = "http://sakha.ysia.ru/author/editor/"
 # SITE_URL = sakha_sire
 
 #if you take sakha_sire or edersaas put number how many pages from start you want take
